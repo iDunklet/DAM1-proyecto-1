@@ -1,0 +1,178 @@
+{
+    "mascotas": [
+      {
+        "id": "0001",
+        "nombre": "Thor",
+
+        "ficha_veterinario": {
+            "animal": {
+                "nombre": "Thor",
+                "xip": "123456789",
+                "data_nacimento": "12-04-2021",
+                "pedigree": true,
+                "peso": 28,
+                "sexo": "M",
+                "color": "Negro",
+                "foto": "thor.jpg",
+                "tipo_de_pelo": "Corto"
+          },
+
+            "proprietario": {
+                "nombre": "Laura",
+                "cognom": "Hernández",
+                "direccion": "Avenida de la Paz 45, Madrid",
+                "email": "laura.hernandez@gmail.com",
+                "telefon": "+34 612345678"
+          }
+        },
+        
+        "vacunacion": {
+            "nombre_vacuna": "Rabia",
+            "data_administracion": "15-02-2023",
+            "data_proxima_administracion": "15-02-2024"
+        }, 
+
+        "visitas": [
+            {
+                "id": "001",
+                "data_visita": "05-06-2023",
+                "motivo": "Chequeo general",
+                "diagnostico": "Salud excelente",
+                "tractamento": "Ninguno",
+                "alta": "05-06-2023"
+            }
+        ]
+      },
+
+      {
+        "id": "0002",
+        "nombre": "Bella",
+        
+        "ficha_veterinario": {
+            "animal": {
+                "nombre": "Bella",
+                "xip": "987654321",
+                "data_nacimento": "30-08-2020",
+                "pedigree": false,
+                "peso": 22,
+                "sexo": "F",
+                "color": "Blanco",
+                "foto": "bella.jpg",
+                "tipo_de_pelo": "Largo"
+            },
+            "proprietario": {
+                "nombre": "José",
+                "cognom": "Gómez",
+                "direccion": "Calle de Vallehermoso 87, Madrid",
+                "email": "jose.gomez@gmail.com",
+                "telefon": "+34 634567890"
+            }
+        },
+
+        "vacunacion": {
+            "nombre_vacuna": "Moquillo",
+            "data_administracion": "10-03-2023",
+            "data_proxima_administracion": "10-03-2024"
+        },
+        "visitas": [
+          {
+            "id": "002",
+            "data_visita": "20-07-2023",
+            "motivo": "Vacunación",
+            "diagnostico": "Salud adecuada",
+            "tractamento": "Ninguno",
+            "alta": "20-07-2023"
+          }
+        ]
+      },
+
+      {
+        "id": "0003",
+        "nombre": "Rocky",
+        
+        "ficha_veterinario": {
+            "animal": {
+                "nombre": "Rocky",
+                "xip": "456789123",
+                "data_nacimento": "01-12-2019",
+                "pedigree": true,
+                "peso": 30,
+                "sexo": "M",
+                "color": "Marrón",
+                "foto": "rocky.jpg",
+                "tipo_de_pelo": "Corto"
+            },
+            "proprietario": {
+                "nombre": "Sofía",
+                "cognom": "Martínez",
+                "direccion": "Calle Gran Vía 16, Madrid",
+                "email": "sofia.martinez@gmail.com",
+                "telefon": "+34 645678901"
+            }
+        },
+
+        "vacunacion": {
+            "nombre_vacuna": "Leptospirosis",
+            "data_administracion": "20-04-2023",
+            "data_proxima_administracion": "20-04-2024"
+        },
+
+        "visitas": [
+          {
+            "id": "003",
+            "data_visita": "10-08-2023",
+            "motivo": "Chequeo dental",
+            "diagnostico": "Salud buena",
+            "tractamento": "Limpiar dientes",
+            "alta": "10-08-2023"
+          }
+        ]
+      },
+
+      {
+        "id": "0004",
+        "nombre": "Max",
+        
+        "ficha_veterinario": {
+            "animal": {
+                "nombre": "Max",
+                "xip": "321654987",
+                "data_nacimento": "05-03-2022",
+                "pedigree": false,
+                "peso": 18,
+                "sexo": "M",
+                "color": "Gris",
+                "foto": "max.jpg",
+                "tipo_de_pelo": "Largo"
+          },
+
+            "proprietario": {
+                "nombre": "Diego",
+                "cognom": "Fernández",
+                "direccion": "Calle de O'Donnell 123, Madrid",
+                "email": "diego.fernandez@gmail.com",
+                "telefon": "+34 658901234"
+            }
+        },
+
+        "vacunacion": {
+            "nombre_vacuna": "Parvovirus",
+            "data_administracion": "15-05-2023",
+            "data_proxima_administracion": "15-05-2024"
+        },
+
+        "visitas": [
+          {
+            "id": "004",
+            "data_visita": "01-09-2023",
+            "motivo": "Chequeo general",
+            "diagnostico": "Salud adecuada",
+            "tractamento": "Ninguno",
+            "alta": "01-09-2023"
+          }
+        ]
+        
+      }
+    ]
+  }
+  
