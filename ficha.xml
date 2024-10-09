@@ -34,7 +34,7 @@
             <alta>05-06-2023</alta>
         </visitas>
     </mascota>
-    
+
     <mascota id="0002">
         <nombre>Bella</nombre>
         <ficha_veterinario>
@@ -70,7 +70,7 @@
             <alta>20-07-2023</alta>
         </visitas>
     </mascota>
-    
+
     <mascota id="0003">
         <nombre>Rocky</nombre>
         <ficha_veterinario>
@@ -106,7 +106,7 @@
             <alta>10-08-2023</alta>
         </visitas>
     </mascota>
-    
+
     <mascota id="0004">
         <nombre>Max</nombre>
         <ficha_veterinario>
