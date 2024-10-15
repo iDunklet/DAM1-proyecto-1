@@ -18,53 +18,13 @@ public class Main{
         char animal;
         int opcion = -1;
 
-
         //?start of the game
-        System.out.println("\nWelcome to the Virtual Pet!");
-        System.out.println("\nWhat pet would you like to adopt? (cat, dog)");
-        String pet_result = scanner.nextLine();
-
-        switch (pet_result) {
-            case "cat":
-                System.out.println("You selected a " + pet_result + "!\n");
-                animal = 'c';
-                break;
-            case "dog":
-                System.out.println("You selected a " + pet_result + "!\n");
-                animal = 'd';
-                break;
-            case "Dog":
-                System.out.println("You selected a " + pet_result + "!\n");
-                animal = 'd';
-                break;
-            case "Cat":
-                System.out.println("You selected a " + pet_result + "!\n");
-                animal = 'c';
-                break;
-            default:
-                System.out.println("Invalid input, please try again!\n");
-                return;
-        }
-
+        String pet_result=tipo_de_pet(scanner);
+        Skip();
         //game loop
         try {
             do {
-                System.out.println("\n******************************");
-                System.out.printf("| %-28s |\n", "Bienvenido a nuestro menu!");
-                System.out.println("------------------------------");
-                System.out.printf("| %-2d. %-25s |\n", 1, "Sleep");
-                System.out.printf("| %-2d. %-25s |\n", 2, "Play");
-                System.out.printf("| %-2d. %-25s |\n", 3, "Eat");
-
-                if (animal == 'c') {
-                    System.out.printf("| %-2d. %-25s |\n", 4, "Self-cleaning");
-                } else {
-                    System.out.printf("| %-2d. %-25s |\n", 4, "Shower");
-                }
-                System.out.printf("| %-2d. %-25s |\n", 5, "Pet status");
-                System.out.printf("| %-2d. %-25s |\n", 0, "Exit application");
-                System.out.println("******************************\n");
-                System.out.print("Choose an option(number): ");
+                menu(pet_result);
                 opcion = scanner.nextInt();
                 scanner.nextLine();
                 switch (opcion) {
@@ -73,7 +33,7 @@ public class Main{
                         break;
 
                     case 1:
-                        if (animal == 'c'){
+                        if (pet_result.equals("cat")){
                             System.out.println("Your "+pet_result+" slept!");
                             sleep=sleep-20;
                         } else {
@@ -85,7 +45,7 @@ public class Main{
                         break;
 
                     case 2:
-                        if (animal == 'c'){
+                        if (pet_result.equals("cat")){
                             System.out.println("You played with your "+pet_result+"!");
                             sleep=sleep-20;
                         } else {
@@ -96,7 +56,7 @@ public class Main{
                         energy=energy+15;
                         break;
                     case 3:
-                        if (animal == 'c'){
+                        if (pet_result.equals("cat")){
                             System.out.println("Your "+pet_result+" ate!");
                             sleep=sleep+10;
                         }   else {
@@ -108,7 +68,7 @@ public class Main{
                         weight=weight+5;
                         break;
                     case 4:
-                        if (animal == 'c'){
+                        if (pet_result.equals("cat")){
                             System.out.println("Your "+pet_result+" self-cleaned!");
                             sleep=sleep+10;
                             hygiene=hygiene+20;
@@ -119,23 +79,18 @@ public class Main{
                         }
                         break;
                     case 5:
-                        System.out.println("\n| Your pet's status:\n");
-                        System.out.printf("| Energy: "+energy+"\n");
-                        System.out.printf("| Fatigue: "+fatigue+"\n");
-                        System.out.printf("| Hygiene: "+hygiene+"\n");
-                        System.out.printf("| Weight: "+weight+"\n");
-                        System.out.printf("| Sleep: "+sleep+"\n");
-                        System.out.println("Press any key to come back to original menu...");
+                        show_status(energy, fatigue, hygiene, weight, sleep);
                         scanner.nextLine();
                         break;
-                    case 6:
 
                     default:
                         System.out.println("Invalid option, please try again!");
                         break;
                 }
                 check_life(energy, fatigue, hygiene, weight, sleep, scanner);
+
             }while (opcion!= 0);
+
         }catch (InputMismatchException e){
             System.out.println("Invalid input, please enter a number!\n");
             scanner.nextLine();
@@ -144,6 +99,50 @@ public class Main{
             scanner.close();
         }
     }
+
+    private static void Skip() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println("");
+        }
+    }
+
+    private static void show_status(int energy, int fatigue, int hygiene, int weight,int sleep) {
+        System.out.println("\n| Your pet's status:\n");
+        System.out.printf("| Energy: "+energy+"\n");
+        System.out.printf("| Fatigue: "+fatigue+"\n");
+        System.out.printf("| Hygiene: "+hygiene+"\n");
+        System.out.printf("| Weight: "+weight+"\n");
+        System.out.printf("| Sleep: "+sleep+"\n");
+        System.out.println("Press any key to come back to original menu...");
+    }
+
+    private static String tipo_de_pet(Scanner scanner) {
+        System.out.println("\nWelcome to the Virtual Pet!");
+        System.out.println("\nWhat pet would you like to adopt? (cat, dog)");
+        String pet_result = scanner.nextLine().toLowerCase();
+        System.out.println("You selected a " + pet_result + "!\n");
+        return pet_result;
+    }
+
+    public static void menu(String pet_result) {
+        System.out.println("\n******************************");
+        System.out.printf("| %-28s |\n", "Bienvenido a nuestro menu!");
+        System.out.println("------------------------------");
+        System.out.printf("| %-2d. %-25s |\n", 1, "Sleep");
+        System.out.printf("| %-2d. %-25s |\n", 2, "Play");
+        System.out.printf("| %-2d. %-25s |\n", 3, "Eat");
+
+        if (pet_result.equals("cat")) {
+            System.out.printf("| %-2d. %-25s |\n", 4, "Self-cleaning");
+        } else {
+            System.out.printf("| %-2d. %-25s |\n", 4, "Shower");
+        }
+        System.out.printf("| %-2d. %-25s |\n", 5, "Pet status");
+        System.out.printf("| %-2d. %-25s |\n", 0, "Exit application");
+        System.out.println("******************************\n");
+        System.out.print("Choose an option(number): ");
+    }
+
     public static int randomizer(){
         Random random = new Random();
         int randomValue = random.nextInt(21)+40;
